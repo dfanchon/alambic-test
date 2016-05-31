@@ -1,7 +1,5 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-include './vendor/webtales/alambic/library/Alambic/Alambic.php';
-include './vendor/webtales/alambic/library/Alambic/Connector/Json.php';
 use Alambic\Alambic;
 use \Exception;
 
@@ -100,9 +98,7 @@ $postModel = [
     ]
   ],
   "multiEndpoint" => [
-    "name" => "posts",
-    "args" => [
-    ]
+    "name" => "posts"
   ],
   "connector" => [
     "type" => "mySimpleDB",
@@ -127,6 +123,7 @@ $postModel = [
   $variableValues = isset($data['variables']) ? $data['variables'] : null;
 
   $alambic = new Alambic($alambicConfig);
+
   $result = $alambic->execute($requestString,$variableValues,$operationName);
 
   header('Content-Type: application/json');
