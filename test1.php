@@ -1,12 +1,11 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 use Alambic\Alambic;
-use \Exception;
 
 $connectors = [
   "mySimpleDB" => [
     "connectorClass" => "Alambic\Connector\Json",
-    "basePath" => "./"
+    "basePath" => "./data/"
   ]
 ];
 
@@ -58,6 +57,9 @@ $userModel = [
         "description" => "User Id"
       ]
     ]
+  ],
+  "multiEndpoint" => [
+    "name" => "users"
   ],
   // The connector used to fetch/write the data
   "connector" => [
@@ -119,12 +121,10 @@ $postModel = [
   $data = $_GET;
 
   $requestString = isset($data['query']) ? $data['query'] : null;
-  $operationName = isset($data['operation']) ? $data['operation'] : null;
-  $variableValues = isset($data['variables']) ? $data['variables'] : null;
 
   $alambic = new Alambic($alambicConfig);
 
-  $result = $alambic->execute($requestString,$variableValues,$operationName);
+  $result = $alambic->execute($requestString);
 
   header('Content-Type: application/json');
   echo json_encode($result);
