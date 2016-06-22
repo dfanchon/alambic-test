@@ -1,6 +1,8 @@
 {
   "mySimpleDB": {
     "connectorClass": "Alambic\\Connector\\Json",
-    "basePath": "./data/"
+    "basePath": "./data/",
+    "prePipeline": ["RedisCache\\RedisCache"],
+    "postPipeline": ["RedisCache\\RedisCache"]
   }
 }

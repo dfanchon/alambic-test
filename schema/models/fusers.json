@@ -42,13 +42,43 @@
         "limitToFirst": {
           "type": "Int",
           "required": false,
-          "description": "Limit"
+          "description": "limitToFirst"
         },
         "limitToLast": {
           "type": "Int",
           "required": false,
-          "description": "Limit"
+          "description": "limitToLast"
+        },
+        "startAt": {
+          "type": "Int",
+          "required": false,
+          "description": "startAt"
+        },
+        "endAt": {
+          "type": "Int",
+          "required": false,
+          "description": "endAt"
+        },
+        "orderBy": {
+          "type": "Int",
+          "required": false,
+          "description": "orderBy"
         }
+      }
+    },
+    "mutations":{
+      "updateFuser":{
+        "args":{
+          "id": {
+            "type": "String",
+            "required": true
+          },
+          "name": {
+            "type": "String"
+          }
+        },
+        "type":"Users",
+        "methodName":"update"
       }
     },
     "connector": {

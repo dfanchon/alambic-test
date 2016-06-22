@@ -39,6 +39,21 @@
     "multiEndpoint": {
       "name": "users"
     },
+    "mutations":{
+      "updateUser":{
+        "args":{
+          "id": {
+            "type": "String",
+            "required": true
+          },
+          "name": {
+            "type": "String"
+          }
+        },
+        "type":"Users",
+        "methodName":"update"
+      }
+    },
     "connector": {
       "type": "mySimpleDB",
       "configs": {

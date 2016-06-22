@@ -2,6 +2,8 @@
   "firebaseDB": {
     "connectorClass": "FirebaseConnector\\FirebaseConnector",
     "databaseURL": "https://burning-inferno-5506.firebaseio.com/",
-    "apiKey":""
+    "apiKey":"",
+    "prePipeline": ["RedisCache\\RedisCache"],
+    "postPipeline": ["RedisCache\\RedisCache"]
   }
 }
