@@ -1,0 +1,20 @@
+{
+  "users": {
+    "1": {
+      "name" : "Luke"
+    },
+    "2": {
+      "name" : "Anakin"
+    }
+  },
+  "posts": {
+    "1": {
+      "text" : "May the Force be with you",
+      "author" : "1"
+    },
+    "2": {
+      "text" : "I am your father",
+      "author" : "2"
+    }
+  }
+}
