@@ -5,8 +5,7 @@
     "fields": {
       "id": {
         "type": "String",
-        "required": true,
-        "description": "User Id"
+        "required": true
       },
       "name": {
         "type": "String",
@@ -23,6 +22,9 @@
         "relation": {
           "author": "id"
         }
+      },
+      "groups": {
+        "type": "Group"
       }
     },
     "expose": true,
@@ -37,9 +39,26 @@
       }
     },
     "multiEndpoint": {
-      "name": "users"
+      "name": "users",
+      "args": {
+        "groups": {
+          "type": "Group"
+        }
+      }
     },
     "mutations":{
+        "createUser":{
+          "args":{
+            "id": {
+              "type": "String"
+            },
+            "name": {
+              "type": "String"
+            }
+          },
+          "type":"Users",
+          "methodName":"create"
+      },
       "updateUser":{
         "args":{
           "id": {
@@ -48,17 +67,44 @@
           },
           "name": {
             "type": "String"
+          },
+          "groups": {
+            "type": "Group"
           }
         },
         "type":"Users",
         "methodName":"update"
       }
     },
+    "deleteUser":{
+      "args":{
+        "id": {
+          "type": "String",
+          "required": true
+        }
+      },
+      "type":"Users",
+      "methodName":"delete"
+  },
     "connector": {
       "type": "mySimpleDB",
       "configs": {
         "fileName": "users.json"
       }
     }
+  },
+  "Group": {
+    "name": "Group",
+    "modelType": "Enum",
+    "values" : [
+      {
+        "value": "g1",
+        "description": "the first group"
+      },
+      {
+        "value": "g2",
+        "description": "the second group"
+      }
+    ]
   }
 }

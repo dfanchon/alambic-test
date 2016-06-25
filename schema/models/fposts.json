@@ -42,14 +42,15 @@
             "type": "String"
           }
         },
-        "type":"Post",
+        "type":"Fpost",
         "methodName":"update"
       }
     },
     "connector" : {
       "type" : "firebaseDB",
       "configs" : {
-        "path": "posts"
+        "path": "posts",
+        "cacheTTL": 30
       }
     }
   }

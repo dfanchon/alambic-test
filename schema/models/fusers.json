@@ -67,6 +67,18 @@
       }
     },
     "mutations":{
+        "createFuser":{
+          "args":{
+            "id": {
+              "type": "String"
+            },
+            "name": {
+              "type": "String"
+            }
+          },
+          "type":"fusers",
+          "methodName":"create"
+      },
       "updateFuser":{
         "args":{
           "id": {
@@ -77,14 +89,25 @@
             "type": "String"
           }
         },
-        "type":"Users",
+        "type":"fusers",
         "methodName":"update"
+      },
+      "deleteFuser":{
+        "args":{
+          "id": {
+            "type": "String",
+            "required": true
+          }
+        },
+        "type":"fusers",
+        "methodName":"delete"
       }
     },
     "connector": {
       "type": "firebaseDB",
       "configs": {
-        "path": "users"
+        "path": "users",
+        "cacheTTL": 60
       }
     }
   }
