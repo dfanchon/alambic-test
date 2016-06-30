@@ -19,29 +19,13 @@
     },
     "expose" : true,
     "singleEndpoint" : {
-      "name" : "fpost",
-      "args" : {
-        "id" : {
-          "type" : "String",
-          "required" : true,
-          "description" : "Post Id"
-        }
-      }
+      "name" : "fpost"
     },
     "multiEndpoint" : {
       "name" : "fposts"
     },
     "mutations":{
       "updateFpost":{
-        "args":{
-          "id": {
-            "type": "String",
-            "required": true
-          },
-          "text": {
-            "type": "String"
-          }
-        },
         "type":"Fpost",
         "methodName":"update"
       }
