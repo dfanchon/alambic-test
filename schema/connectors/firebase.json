@@ -5,6 +5,8 @@
     "apiKey":"",
     "prePipeline": ["RedisCache\\RedisCache"],
     "postPipeline": ["RedisCache\\RedisCache"],
+    "redisCacheHost": "127.0.0.1",
+    "redisCachePort": 6379,
     "defaultCacheTTL": 120
   }
 }
