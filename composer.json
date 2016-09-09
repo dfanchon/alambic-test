@@ -4,7 +4,7 @@
         "webtales/alambic-connector-firebase":"dev-master",
         "webtales/alambic-connector-mongodb":"dev-master",
         "webtales/alambic-redis-cache":"dev-master",
-        "webtales/alambic-connector-rest":"dev-master",
+        "webtales/alambic-connector-rest":"dev-master"
     },
     "repositories": [
       {
