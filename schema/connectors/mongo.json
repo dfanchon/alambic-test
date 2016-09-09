@@ -1,0 +1,7 @@
+{
+  "Rubedo": {
+    "connectorClass": "AlambicMongodbConnector\\Connector",
+    "connectionString": "localhost:27017",
+    "db": "rubedo"
+  }
+}

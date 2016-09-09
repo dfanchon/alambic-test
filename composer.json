@@ -2,7 +2,9 @@
     "require": {
         "webtales/alambic":"dev-master",
         "webtales/alambic-connector-firebase":"dev-master",
-        "webtales/alambic-redis-cache":"dev-master"
+        "webtales/alambic-connector-mongodb":"dev-master",
+        "webtales/alambic-redis-cache":"dev-master",
+        "webtales/alambic-connector-rest":"dev-master",
     },
     "repositories": [
       {
@@ -12,6 +14,10 @@
       {
           "type": "vcs",
           "url": "git://github.com/WebTales/alambic-redis-cache.git"
+      },
+      {
+          "type": "vcs",
+          "url": "git://github.com/WebTales/alambic-connector-rest.git"
       }
     ]
 }
