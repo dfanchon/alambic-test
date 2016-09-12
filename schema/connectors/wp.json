@@ -1,0 +1,6 @@
+{
+  "WPapi": {
+    "connectorClass": "AlambicRestConnector\\Connector",
+    "baseUrl": "https://public-api.wordpress.com/rest/v1.1"
+  }
+}

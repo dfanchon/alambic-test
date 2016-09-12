@@ -1,0 +1,6 @@
+{
+  "RestAPI": {
+    "connectorClass": "AlambicRestConnector\\Connector",
+    "baseUrl": "http://demo.local/api/v1"
+  }
+}

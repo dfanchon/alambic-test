@@ -1,0 +1,76 @@
+{
+  "Rcontents": {
+    "name" : "RContents",
+    "description" : "RContents",
+    "fields" : {
+      "id" : {
+        "type" : "String",
+        "required" : true,
+        "description" : "Content Id"
+      },
+      "text" : {
+        "type" : "String",
+        "description" : "Content Text"
+      }
+    },
+    "expose" : true,
+    "multiEndpoint" : {
+        "name" : "rcontents",
+        "args" : {
+            "lang" : {
+                "type" : "String",
+                "description" : "Language"
+            },
+            "queryId" : {
+                "type" : "String",
+                "required" : true,
+                "description" : "Query ID"
+            }
+        }
+    },
+    "connector" : {
+      "type" : "RestAPI",
+      "configs" : {
+        "segment" : "contents",
+        "resultsPath" : "contents",
+        "startFieldName": "start",
+        "limitFieldName": "limit"
+      }
+    }
+  },
+  "Rcontent": {
+    "name" : "RContent",
+    "description" : "RContent",
+    "fields" : {
+      "id" : {
+        "type" : "String",
+        "required" : true,
+        "description" : "Content Id"
+      },
+      "text" : {
+        "type" : "String",
+        "description" : "Content Text"
+      }
+    },
+    "expose" : true,
+    "singleEndpoint" : {
+      "name" : "rcontent",
+      "args" : {
+        "id" : {
+          "type" : "String",
+          "required" : true,
+          "description" : "Content Id"
+        }
+      }
+    },
+    "connector" : {
+      "type" : "RestAPI",
+      "configs" : {
+        "segment" : "contents/{id}",
+        "resultsPath" : "content",
+        "startFieldName": "start",
+        "limitFieldName": "limit"
+      }
+    }
+  }
+}

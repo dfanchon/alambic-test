@@ -1,0 +1,82 @@
+{
+  "WPosts": {
+    "name" : "WPosts",
+    "description" : "WPosts",
+    "fields" : {
+      "ID" : {
+        "type" : "String",
+        "required" : true,
+        "description" : "Content Id"
+      },
+      "title": {
+          "type" : "String",
+          "description" : "Title"
+      },
+      "content" : {
+        "type" : "String",
+        "description" : "Content Text"
+      }
+    },
+    "expose" : true,
+    "multiEndpoint" : {
+        "name" : "wposts",
+        "args" : {
+            "siteId" : {
+                "type" : "String",
+                "required" : true,
+                "description" : "Site ID"
+            }
+        }
+    },
+    "connector" : {
+      "type" : "WPapi",
+      "configs" : {
+        "segment" : "sites/{siteId}/posts",
+        "resultsPath" : "posts",
+        "startFieldName": "offset",
+        "limitFieldName": "number",
+        "orderByFieldName": "order_by",
+        "orderByDirectionFieldName": "order",
+        "ascendantValue": "ASC",
+        "descendantValue": "DESC"
+      }
+    }
+  },
+  "WPost": {
+    "name" : "WPost",
+    "description" : "WPost",
+    "fields" : {
+      "ID" : {
+        "type" : "String",
+        "required" : true,
+        "description" : "Content Id"
+      },
+      "content" : {
+        "type" : "String",
+        "description" : "Content Text"
+      }
+    },
+    "expose" : true,
+    "singleEndpoint" : {
+      "name" : "wpost",
+      "args" : {
+          "siteId" : {
+              "type" : "String",
+              "required" : true,
+              "description" : "Site ID"
+          },
+          "id" : {
+              "type" : "Int",
+              "required" : true,
+              "description" : "Content ID"
+          }
+      }
+    },
+    "connector" : {
+      "type" : "WPapi",
+      "configs" : {
+        "segment" : "sites/{siteId}/posts/{id}"
+      }
+    }
+  }
+}
