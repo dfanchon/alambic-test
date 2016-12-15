@@ -1,0 +1,6 @@
+{
+  "TheGuardian": {
+    "connectorClass": "AlambicRestConnector\\Connector",
+    "baseUrl": "http://content.guardianapis.com/search?show-fields=all&api-key=test"
+  }
+}

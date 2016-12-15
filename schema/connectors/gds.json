@@ -1,0 +1,6 @@
+{
+  "GDS": {
+    "connectorClass": "AlambicGDSConnector\\Connector",
+    "projectId": "my-test-project-152313"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "content": {
+    "name": "Content",
+    "description": "The Guardian API content",
+    "fields": {
+      "id": {
+        "type": "String",
+        "required": true,
+        "description": "Content ID"
+      },
+      "webTitle": {
+        "type": "String",
+        "required": true,
+        "description": "WebTitle"
+      },
+      "fields": {
+        "type": "field",
+        "description": "Fields"
+      },
+      "tags": {
+        "type": "tag",
+        "description": "Tags",
+        "multivalued": true
+      },
+      "section": {
+        "type": "section",
+        "multivalued": false,
+        "relation": {
+          "id": "sectionId"
+        }
+      }
+    },
+    "expose": true,
+    "multiEndpoint": {
+      "name": "contents",
+      "args": {
+        "q": {
+          "type": "String"
+        }
+      }
+    },
+    "singleEndpoint": {
+      "name": "content",
+      "args": {
+
+      }
+    },
+    "connector": {
+      "type": "test",
+      "configs": {
+        "segment": "search",
+        "resultsPath": "response.results",
+        "startFieldName": "page",
+        "limitFieldName": "page-size"
+      }
+    }
+  },
+  "field": {
+    "name": "field",
+    "description": "Embedded Field",
+    "fields": {
+      "headline": {
+        "type": "ID",
+        "required": true
+      },
+      "body": {
+        "type": "String"
+      },
+      "thumbnail": {
+        "type": "String"
+      },
+      "lastModified": {
+        "type": "String"
+      }
+    }
+  },
+  "tag": {
+    "name": "tag",
+    "description": "Embedded Tag List",
+    "fields": {
+      "id": {
+        "type": "ID",
+        "required": true
+      },
+      "webTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "section": {
+    "name": "Section",
+    "description": "Section",
+    "fields": {
+      "id": {
+        "type": "ID",
+        "required": true
+      },
+      "webTitle": {
+        "type": "String"
+      },
+      "apiUrl": {
+        "type": "String"
+      }
+    },
+    "expose": true,
+    "singleEndpoint": {
+      "name": "section",
+      "args": {
+        "id": {
+          "type": "ID",
+          "required": true
+        }
+      }
+    },
+    "connector": {
+      "type": "test",
+      "configs": {
+        "segment": "{id}",
+        "resultsPath": "response.section"
+      }
+    }
+  }
+}

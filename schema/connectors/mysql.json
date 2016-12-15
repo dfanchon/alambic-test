@@ -1,0 +1,12 @@
+{
+  "MySQL": {
+    "connectorClass": "AlambicRDBMSConnector\\Connector",
+    "databaseUrl": "mysql://root:test@127.0.0.1:3306/classicmodels",
+    "db": "classicmodels",
+    "user": "root",
+    "password": "test",
+    "host": "127.0.0.1",
+    "port": "3306",
+    "driver": "pdo_mysql"
+  }
+}

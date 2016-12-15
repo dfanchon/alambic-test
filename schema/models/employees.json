@@ -1,0 +1,39 @@
+{
+  "employees": {
+    "name" : "Employees",
+    "description" : "Employees",
+    "fields" : {
+      "employeeNumber" : {
+        "type" : "Int",
+        "required" : true,
+        "description" : "Employee Number"
+      },
+      "firstName" : {
+        "type" : "String"
+     }
+  },
+    "expose" : true,
+    "multiEndpoint" : {
+      "name" : "employees"
+    },
+    "singleEndpoint" : {
+      "name" : "employee",
+      "args" : {
+        "employeeNumber" : {
+          "type" : "Int",
+          "description" : "Employee Number"
+      },
+      "employeeName" : {
+        "type" : "String",
+        "description" : "Employee Name"
+      }
+      }
+    },
+    "connector" : {
+      "type" : "MySQL",
+      "configs" : {
+        "table" : "employees"
+      }
+    }
+  }
+}

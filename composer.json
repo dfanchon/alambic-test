@@ -4,7 +4,9 @@
         "webtales/alambic-connector-firebase":"dev-master",
         "webtales/alambic-connector-mongodb":"dev-master",
         "webtales/alambic-redis-cache":"dev-master",
-        "webtales/alambic-connector-rest":"dev-master"
+        "webtales/alambic-connector-rest":"dev-master",
+        "ampize/alambic-connector-rdbms":"dev-master",
+        "ampize/alambic-connector-gds": "dev-master"
     },
     "repositories": [
       {
@@ -18,6 +20,14 @@
       {
           "type": "vcs",
           "url": "git://github.com/WebTales/alambic-connector-rest.git"
+      },
+      {
+          "type": "vcs",
+          "url": "git://github.com/ampize/alambic-connector-rdbms.git"
+      },
+      {
+          "type": "vcs",
+          "url": "git://github.com/ampize/alambic-connector-gds.git"
       }
     ]
 }

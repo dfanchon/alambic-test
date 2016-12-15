@@ -1,7 +1,8 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 use Alambic\Alambic;
-
+putenv('GOOGLE_APPLICATION_CREDENTIALS=/Users/webtales/.config/gcloud/application_default_credentials.json');
+var_dump(openssl_get_cert_locations());
 $data = $_GET;
 
 $requestString = isset($data['query']) ? $data['query'] : null;

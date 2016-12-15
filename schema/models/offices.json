@@ -1,0 +1,43 @@
+{
+  "offices": {
+    "name" : "offices",
+    "description" : "offices",
+    "fields" : {
+      "officeCode" : {
+        "type" : "ID",
+        "required" : true,
+        "description" : "office Id"
+      },
+      "city" : {
+        "type" : "String"
+     },
+     "employees": {
+         "type": "employees",
+         "multivalued": true,
+         "relation": {
+           "officeCode": "officeCode"
+         }
+     }
+  },
+    "expose" : true,
+    "multiEndpoint" : {
+      "name" : "offices"
+    },
+    "singleEndpoint" : {
+      "name" : "office",
+      "args" : {
+        "officeCode" : {
+          "type" : "String",
+          "required" : true,
+          "description" : "office Id"
+      }
+      }
+    },
+    "connector" : {
+      "type" : "MySQL",
+      "configs" : {
+        "table" : "offices"
+      }
+    }
+  }
+}

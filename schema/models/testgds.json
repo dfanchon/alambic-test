@@ -1,0 +1,37 @@
+{
+  "Gds": {
+    "name" : "Gds",
+    "description" : "GDS Test",
+    "fields" : {
+      "id" : {
+        "type" : "String",
+        "required" : true,
+        "description" : "Kind ID"
+      },
+      "name" : {
+        "type" : "String",
+        "description" : "Name"
+      }
+    },
+    "expose" : true,
+    "singleEndpoint" : {
+      "name" : "gds_single",
+      "args" : {
+        "id" : {
+          "type" : "String",
+          "required" : true,
+          "description" : "Kind ID"
+        }
+      }
+    },
+    "multiEndpoint" : {
+      "name" : "gds_list"
+  },
+    "connector" : {
+      "type" : "GDS",
+      "configs" : {
+        "kind" : "test"
+      }
+    }
+  }
+}

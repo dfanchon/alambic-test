@@ -1,0 +1,46 @@
+{
+  "customers": {
+    "name" : "Customers",
+    "description" : "Customers",
+    "fields" : {
+      "customerNumber" : {
+        "type" : "Int",
+        "required" : true,
+        "description" : "Customer Id"
+      },
+      "customerName" : {
+        "type" : "String"
+     },
+     "salesRep": {
+         "type": "employees",
+         "multivalued": false,
+         "relation": {
+           "employeeNumber": "salesRepEmployeeNumber"
+         }
+     }
+  },
+    "expose" : true,
+    "multiEndpoint" : {
+      "name" : "customers"
+    },
+    "singleEndpoint" : {
+      "name" : "customer",
+      "args" : {
+        "customerNumber" : {
+          "type" : "Int",
+          "description" : "Customer Id"
+      },
+      "customerName" : {
+        "type" : "String",
+        "description" : "Customer Name"
+      }
+      }
+    },
+    "connector" : {
+      "type" : "MySQL",
+      "configs" : {
+        "table" : "customers"
+      }
+    }
+  }
+}
